@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/grzeg/AndroidStudioProjects/DartsCount/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.332" />
+        <entry key="..\:/Users/grzeg/AndroidStudioProjects/DartsCount/app/src/main/res/drawable/ic_launcher_background.xml" value="0.332" />
+        <entry key="..\:/Users/grzeg/AndroidStudioProjects/DartsCount/app/src/main/res/layout/activity_main.xml" value="0.3625" />
+        <entry key="..\:/Users/grzeg/AndroidStudioProjects/DartsCount/app/src/main/res/layout/activity_main23.xml" value="0.18541666666666667" />
+        <entry key="..\:/Users/grzeg/AndroidStudioProjects/DartsCount/app/src/main/res/layout/content_main23.xml" value="0.17135416666666667" />
+        <entry key="..\:/Users/grzeg/AndroidStudioProjects/DartsCount/app/src/main/res/layout/fghfgh.xml" value="0.18541666666666667" />
+        <entry key="..\:/Users/grzeg/AndroidStudioProjects/DartsCount/app/src/main/res/layout/fragment_first.xml" value="0.18541666666666667" />
+        <entry key="..\:/Users/grzeg/AndroidStudioProjects/DartsCount/app/src/main/res/layout/fragment_second.xml" value="0.18541666666666667" />
+        <entry key="..\:/Users/grzeg/AndroidStudioProjects/DartsCount/app/src/main/res/layout/main_menu_layout.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/grzeg/AndroidStudioProjects/DartsCount/app/src/main/res/layout/onedart_mode_game_layout.xml" value="0.33" />
+        <entry key="..\:/Users/grzeg/AndroidStudioProjects/DartsCount/app/src/main/res/layout/sadasdsadasd.xml" value="0.184375" />
+        <entry key="..\:/Users/grzeg/AndroidStudioProjects/DartsCount/app/src/main/res/layout/simple_mode_game_layout.xml" value="0.3625" />
+        <entry key="..\:/Users/grzeg/AndroidStudioProjects/DartsCount/app/src/main/res/layout/threeDarts_mode_game_layout.xml" value="0.3625" />
+        <entry key="..\:/Users/grzeg/AndroidStudioProjects/DartsCount/app/src/main/res/layout/threedarts_mode_game_layout.xml" value="0.3625" />
+        <entry key="..\:/Users/grzeg/AndroidStudioProjects/DartsCount/app/src/main/res/layout/twoDarts_mode_game_layout.xml" value="0.3625" />
+        <entry key="..\:/Users/grzeg/AndroidStudioProjects/DartsCount/app/src/main/res/layout/twodarts_mode_game_layout.xml" value="0.25" />
+        <entry key="..\:/Users/grzeg/AndroidStudioProjects/DartsCount/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.332" />
+        <entry key="..\:/Users/grzeg/AndroidStudioProjects/DartsCount/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.332" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
