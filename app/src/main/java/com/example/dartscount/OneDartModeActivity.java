@@ -1,24 +1,29 @@
 package com.example.dartscount;
 
+
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.os.CountDownTimer;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 
 
 public class OneDartModeActivity extends MainActivity {
 
-    public ImageView goHomeButton;
-    public Button startButton;
+
+    public TextView gameTimer;
     public Button nextButton;
     public TextView numberToCount;
     public EditText inputAnswer;
 
+
     private ExpectedResultAndDisplayedNumber expectedResultAndDisplayedNumber;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,21 +33,25 @@ public class OneDartModeActivity extends MainActivity {
         nextButton = findViewById(R.id.validateAndNextQuestionButton);
         numberToCount = findViewById(R.id.numberToDisplayForUser);
         inputAnswer = findViewById(R.id.inputNumberToValid);
-        startButton = findViewById(R.id.startGameButton);
-        goHomeButton = findViewById(R.id.backToHomeButton);
+        gameTimer = findViewById(R.id.gameTimer);
 
-        nextButton.setEnabled(false);
+        generateNewExample();
 
-        startButton.setOnClickListener(view -> {
-            generateNewExample();
-            nextButton.setEnabled(true);
-            startButton.setEnabled(false);
-        });
+        new CountDownTimer(checkTimeLength(), 1000) {
 
-        goHomeButton.setOnClickListener(view -> {
-            Intent intent = new Intent(OneDartModeActivity.this,MainActivity.class);
-            startActivity(intent);
-        });
+            public void onTick(long millisUntilFinished) {
+
+                NumberFormat f = new DecimalFormat("00");
+                long min = (millisUntilFinished / 60000) % 60;
+                long sec = (millisUntilFinished / 1000) % 60;
+
+                gameTimer.setText(f.format(min) + ":" + f.format(sec));
+            }
+            public void onFinish() {
+                gameTimer.setText("00:00");
+            }
+        }.start();
+
 
 
         nextButton.setOnClickListener(view -> {
@@ -65,5 +74,20 @@ public class OneDartModeActivity extends MainActivity {
     public void generateNewExample(){
         expectedResultAndDisplayedNumber = CountMethods.getRandomNumberWithOperatorAndResult();
         numberToCount.setText(expectedResultAndDisplayedNumber.getDisplayedNumber());
+    }
+
+    public long checkTimeLength(){
+        Intent receivedIntend = getIntent();
+        String receivedValue = receivedIntend.getStringExtra("TIME_SENDER");
+        if(receivedValue.equals("3 min")){
+            return 180000;
+        }
+        if(receivedValue.equals("5 min")){
+            return 300000;
+        }
+        else {
+            return 600000;
+        }
+
     }
 }

@@ -11,8 +11,7 @@ import android.widget.Toast;
 
 public class ThreeDartModeActivity extends MainActivity {
 
-    public ImageView goHomeButton;
-    public Button startButton;
+
     public Button nextButton;
     public TextView numberToCount1;
     public TextView numberToCount2;
@@ -33,24 +32,11 @@ public class ThreeDartModeActivity extends MainActivity {
         numberToCount2 = findViewById(R.id.secondDartToDisplayForUser);
         numberToCount3 = findViewById(R.id.thirdDartToDisplayForUser);
         inputAnswer = findViewById(R.id.inputNumberToValid);
-        startButton = findViewById(R.id.startGameButton);
-        goHomeButton = findViewById(R.id.backToHomeButton);
 
-        nextButton.setEnabled(false);
+        generateNewExample1();
+        generateNewExample2();
+        generateNewExample3();
 
-
-        goHomeButton.setOnClickListener(view -> {
-            Intent intent = new Intent(ThreeDartModeActivity.this,MainActivity.class);
-            startActivity(intent);
-        });
-
-        startButton.setOnClickListener(view -> {
-            generateNewExample1();
-            generateNewExample2();
-            generateNewExample3();
-            nextButton.setEnabled(true);
-            startButton.setEnabled(false);
-        });
 
         nextButton.setOnClickListener(view -> {
             String stringAnswer = String.valueOf(inputAnswer.getText());
