@@ -11,11 +11,13 @@
         <entry key="..\:/Users/grzeg/AndroidStudioProjects/DartsCount/app/src/main/res/layout/fghfgh.xml" value="0.18541666666666667" />
         <entry key="..\:/Users/grzeg/AndroidStudioProjects/DartsCount/app/src/main/res/layout/fragment_first.xml" value="0.18541666666666667" />
         <entry key="..\:/Users/grzeg/AndroidStudioProjects/DartsCount/app/src/main/res/layout/fragment_second.xml" value="0.18541666666666667" />
+        <entry key="..\:/Users/grzeg/AndroidStudioProjects/DartsCount/app/src/main/res/layout/game_exit_popup.xml" value="0.5" />
         <entry key="..\:/Users/grzeg/AndroidStudioProjects/DartsCount/app/src/main/res/layout/game_setting.xml" value="0.25" />
         <entry key="..\:/Users/grzeg/AndroidStudioProjects/DartsCount/app/src/main/res/layout/main_menu_layout.xml" value="0.25" />
         <entry key="..\:/Users/grzeg/AndroidStudioProjects/DartsCount/app/src/main/res/layout/onedart_mode_game_layout.xml" value="0.33" />
         <entry key="..\:/Users/grzeg/AndroidStudioProjects/DartsCount/app/src/main/res/layout/sadasdsadasd.xml" value="0.184375" />
         <entry key="..\:/Users/grzeg/AndroidStudioProjects/DartsCount/app/src/main/res/layout/simple_mode_game_layout.xml" value="0.3625" />
+        <entry key="..\:/Users/grzeg/AndroidStudioProjects/DartsCount/app/src/main/res/layout/summary_game_popup.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/grzeg/AndroidStudioProjects/DartsCount/app/src/main/res/layout/threeDarts_mode_game_layout.xml" value="0.3625" />
         <entry key="..\:/Users/grzeg/AndroidStudioProjects/DartsCount/app/src/main/res/layout/threedarts_mode_game_layout.xml" value="0.3625" />
         <entry key="..\:/Users/grzeg/AndroidStudioProjects/DartsCount/app/src/main/res/layout/twoDarts_mode_game_layout.xml" value="0.3625" />
@@ -35,7 +37,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.33" />
+        <option name="scale" value="0.5" />
       </ProjectState>
     </option>
   </component>

@@ -10,6 +10,9 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="gameover">GameOver</string>
+    <string name="total_correct_answers">Total correct answers</string>
+    <string name="total_incorrect_answers">Total incorrect answers</string>
 
     <string-array name="gameModes">
         <item>One Dart Mode (EASY)</item>

@@ -2,26 +2,25 @@ package com.example.dartscount;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
-import android.widget.TextView;
+
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.filament.View;
 
 import org.w3c.dom.Text;
 
-public class GameSettingActivity extends MainActivity{
+public class GameSettingActivity extends AppCompatActivity {
 
     public Spinner modeSpinner;
     public Button startGameButton;
     public RadioGroup radioGroup;
     public RadioButton radioButton;
-    public TextView selectedGameTime;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,23 +45,31 @@ public class GameSettingActivity extends MainActivity{
                 int selectedItemNumber = modeSpinner.getSelectedItemPosition();
                 if(selectedItemNumber==0){
                     Intent intent = new Intent(GameSettingActivity.this,OneDartModeActivity.class);
-                    intent.putExtra("TIME_SENDER", radioButton.getText());
+                    intent.putExtra("TIME_SENDER", convertTimeToMilliseconds());
                     startActivity(intent);
                 }
                 if(selectedItemNumber==1){
                     Intent intent = new Intent(GameSettingActivity.this,TwoDartModeActivity.class);
-                    intent.putExtra("TIME_SENDER", radioButton.getText());
+                    intent.putExtra("TIME_SENDER", convertTimeToMilliseconds());
                     startActivity(intent);
                 }
                 if(selectedItemNumber==2){
                     Intent intent = new Intent(GameSettingActivity.this,ThreeDartModeActivity.class);
-                    intent.putExtra("TIME_SENDER", radioButton.getText());
+                    intent.putExtra("TIME_SENDER", convertTimeToMilliseconds());
                     startActivity(intent);
                 }
 
         });
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 
-
+    public long convertTimeToMilliseconds(){
+        String radioButtonText = String.valueOf(radioButton.getText());
+        String arr[] = radioButtonText.split(" ", 2);
+        return Integer.parseInt(arr[0])* 60000L;
     }
 
 

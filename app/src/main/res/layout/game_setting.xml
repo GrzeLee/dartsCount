@@ -43,6 +43,7 @@
             android:id="@+id/radioButton3min"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:checked="true"
             android:text="3 min"
             android:textColor="@color/black"
             android:textSize="20dp"
