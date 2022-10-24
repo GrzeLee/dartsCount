@@ -9,7 +9,9 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-public class PopupBuilder extends MainActivity{
+import androidx.appcompat.app.AppCompatActivity;
+
+public class PopupBuilder extends AppCompatActivity {
 
     private AlertDialog dialog;
     private AlertDialog.Builder dialogBuilder;
@@ -33,23 +35,8 @@ public class PopupBuilder extends MainActivity{
         incorrectAnswerView.setText(incorrectCount);
         endButton.setOnClickListener(view -> {
             Intent intent = new Intent(builderActivity, MainActivity.class);
-            builderActivity.startActivity(intent);});
-    }
-
-    public void exitGamePopup(CountDownTimer countDownTimer){
-        dialogBuilder = new AlertDialog.Builder(builderActivity);
-        View endGamePopupView = builderActivity.getLayoutInflater().inflate(R.layout.game_exit_popup,null);
-        Button yesButton = endGamePopupView.findViewById(R.id.yesPopupButton);
-        Button noButton = endGamePopupView.findViewById(R.id.noPopupButton);
-        dialogBuilder.setView(endGamePopupView);
-        dialog = dialogBuilder.create();
-        dialog.show();
-        countDownTimer.cancel();
-        yesButton.setOnClickListener(view -> {
-            Intent intent = new Intent(builderActivity, MainActivity.class);
-            builderActivity.startActivity(intent);});
-        noButton.setOnClickListener(view -> {
-            countDownTimer.start();
-            dialog.cancel();});
+            builderActivity.startActivity(intent);
+            finish();
+            });
     }
 }

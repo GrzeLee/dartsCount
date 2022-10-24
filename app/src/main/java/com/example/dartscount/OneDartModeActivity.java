@@ -93,6 +93,7 @@ public class OneDartModeActivity extends AppCompatActivity {
             countDownTimer.cancel();
             Intent intent =  new Intent(OneDartModeActivity.this,MainActivity.class);
             startActivity(intent);
+            finish();
         }
     }
     public void generateNewExample(){

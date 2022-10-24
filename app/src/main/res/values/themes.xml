@@ -19,4 +19,8 @@
     </style>
     <style name="Theme.DartsCount.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="Theme.DartsCount.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="popUpStyle">
+        <item name="android:windowCloseOnTouchOutside"> false </item>
+    </style>
 </resources>

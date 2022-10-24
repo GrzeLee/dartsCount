@@ -96,6 +96,7 @@ public class TwoDartModeActivity extends AppCompatActivity {
             countDownTimer.cancel();
             Intent intent =  new Intent(TwoDartModeActivity.this,MainActivity.class);
             startActivity(intent);
+            finish();
         }
     }
 

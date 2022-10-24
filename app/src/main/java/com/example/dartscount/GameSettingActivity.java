@@ -58,7 +58,7 @@ public class GameSettingActivity extends AppCompatActivity {
                     intent.putExtra("TIME_SENDER", convertTimeToMilliseconds());
                     startActivity(intent);
                 }
-
+                finish();
         });
     }
     @Override

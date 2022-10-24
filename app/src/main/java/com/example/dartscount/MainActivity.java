@@ -2,6 +2,7 @@ package com.example.dartscount;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Application;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -27,8 +28,10 @@ public class MainActivity extends AppCompatActivity {
         firstGameButton.setOnClickListener(view -> {
                 Intent intent =  new Intent(MainActivity.this,GameSettingActivity.class);
                 startActivity(intent);
+                finish();
             });
     }
+
 
     @Override
     public void onBackPressed() {
@@ -40,5 +43,6 @@ public class MainActivity extends AppCompatActivity {
             System.exit(0);
         }
     }
+
 
 }

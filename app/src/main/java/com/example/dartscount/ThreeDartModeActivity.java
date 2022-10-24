@@ -104,6 +104,7 @@ public class ThreeDartModeActivity extends AppCompatActivity {
             countDownTimer.cancel();
             Intent intent =  new Intent(ThreeDartModeActivity.this,MainActivity.class);
             startActivity(intent);
+            finish();
         }
     }
 
