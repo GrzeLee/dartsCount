@@ -57,26 +57,18 @@
             app:layout_constraintVertical_bias="0"
             app:layout_constraintVertical_chainStyle="spread_inside" />
 
-        <Button
-            android:id="@+id/startGameButton"
+        <TextView
+            android:id="@+id/gameTimer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="Start"
+            android:text="00:00"
+            android:textSize="20dp"
+            android:textColor="#FF5733"
+            app:layout_constraintVertical_bias=".05"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.1"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/inputNumberToValid"
-            app:layout_constraintVertical_bias="0" />
-
-        <ImageView
-            android:id="@+id/backToHomeButton"
-            android:layout_width="44dp"
-            android:layout_height="43dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="?attr/homeAsUpIndicator" />
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

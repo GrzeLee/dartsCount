@@ -23,6 +23,9 @@
             android:name=".ThreeDartModeActivity"
             android:exported="false" />
         <activity
+            android:name=".GameSettingActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true" >
             <intent-filter>

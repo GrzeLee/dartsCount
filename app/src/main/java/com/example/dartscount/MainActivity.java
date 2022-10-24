@@ -2,18 +2,18 @@ package com.example.dartscount;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Application;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
 
-    public Button oneDartMainMenuButton;
-    public Button twoDartMainMenuButton;
-    public Button threeDartsMainMenuButton;
-
+    public Button firstGameButton;
+    public Button secondGameButton;
+    private int backTapCount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,37 +21,28 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.main_menu_layout);
         getSupportActionBar().hide();
 
-        oneDartMainMenuButton = findViewById(R.id.oneDartModebutton);
-        twoDartMainMenuButton = findViewById(R.id.twoDartModeButton);
-        threeDartsMainMenuButton = findViewById(R.id.threeDartsModeButton);
+        firstGameButton = findViewById(R.id.firstGameButton);
+        secondGameButton = findViewById(R.id.secondGameButton);
 
 
-
-        oneDartMainMenuButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, OneDartModeActivity.class);
+        firstGameButton.setOnClickListener(view -> {
+                Intent intent =  new Intent(MainActivity.this,GameSettingActivity.class);
                 startActivity(intent);
-            }
-        });
-
-        twoDartMainMenuButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, TwoDartModeActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        threeDartsMainMenuButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, ThreeDartModeActivity.class);
-                startActivity(intent);
-            }
-        });
-
-
-
+                finish();
+            });
     }
+
+
+    @Override
+    public void onBackPressed() {
+        backTapCount++;
+        Toast.makeText(getApplicationContext(), "Click again to close",
+                Toast.LENGTH_LONG).show();
+        if (backTapCount==2){
+            MainActivity.this.finish();
+            System.exit(0);
+        }
+    }
+
+
 }
