@@ -26,6 +26,7 @@ public class GameSettingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_setting);
+        getSupportActionBar().hide();
 
         modeSpinner = findViewById(R.id.modeSpinner);
         startGameButton = findViewById(R.id.startGameButton);

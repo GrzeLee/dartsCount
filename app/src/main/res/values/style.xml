@@ -131,5 +131,37 @@
 
     </style>
 
+    <style name="gametimer">
+
+        <item name="android:fontFamily">
+            @font/inria_sans_regular
+        </item>
+
+        <item name="android:textSize">
+            48sp
+        </item>
+
+        <item name="android:textColor">
+            #FFFFFF
+        </item>
+
+    </style>
+
+    <style name="numbertodis">
+
+        <item name="android:fontFamily">
+            @font/inria_sans_regular
+        </item>
+
+        <item name="android:textSize">
+            48sp
+        </item>
+
+        <item name="android:textColor">
+            #FFFFFF
+        </item>
+
+    </style>
+
 
 </resources>

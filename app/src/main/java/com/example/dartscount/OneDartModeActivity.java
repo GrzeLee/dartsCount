@@ -35,6 +35,7 @@ public class OneDartModeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.onedart_mode_game_layout);
+        getSupportActionBar().hide();
 
         nextButton = findViewById(R.id.validateAndNextQuestionButton);
         numberToCount = findViewById(R.id.numberToDisplayForUser);

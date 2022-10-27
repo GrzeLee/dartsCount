@@ -33,6 +33,7 @@ public class TwoDartModeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.twodarts_mode_game_layout);
+        getSupportActionBar().hide();
 
         nextButton = findViewById(R.id.validateAndNextQuestionButton);
         numberToCount1 = findViewById(R.id.firstDartToDisplayForUser);

@@ -37,6 +37,7 @@ public class ThreeDartModeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.threedarts_mode_game_layout);
+        getSupportActionBar().hide();
 
         nextButton = findViewById(R.id.validateAndNextQuestionButton);
         numberToCount1 = findViewById(R.id.firstDartToDisplayForUser);
