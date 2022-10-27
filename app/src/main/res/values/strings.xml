@@ -13,6 +13,7 @@
     <string name="gameover">GameOver</string>
     <string name="total_correct_answers">Total correct answers</string>
     <string name="total_incorrect_answers">Total incorrect answers</string>
+    <string name="app_title">Darts Count</string>
 
     <string-array name="gameModes">
         <item>One Dart Mode (EASY)</item>

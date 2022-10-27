@@ -3,100 +3,228 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#333333">
 
-    <Button
-        android:id="@+id/startGameButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
-        android:text="Start"
+    <View
+        android:id="@+id/background_"
+        android:layout_width="546dp"
+        android:layout_height="793dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/background_image"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-1dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <TextView
+        android:id="@+id/setting_lay"
+        android:layout_width="293dp"
+        android:layout_height="72dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="Game Setting"
+        android:textAppearance="@style/setting_lay"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+        tools:ignore="MissingConstraints" />
+
+    <View
+        android:id="@+id/dart_icon"
+        android:layout_width="66dp"
+        android:layout_height="18dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/dart_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/setting_lay"
+        app:layout_constraintHorizontal_bias="0.02"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/setting_lay"
+        tools:ignore="MissingConstraints" />
+
+
+    <TextView
+        android:id="@+id/select_time"
+        android:layout_width="360dp"
+        android:layout_height="37dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="60dp"
+        android:gravity="center_vertical"
+        android:text="Select game time:"
+        android:textAppearance="@style/select_game"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/modeSpinner"
+        tools:ignore="MissingConstraints" />
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="80dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center_vertical"
+        android:text=" 3 min"
+        android:textAppearance="@style/select_game"
+        app:layout_constraintStart_toEndOf="@+id/radioGroup"
+        app:layout_constraintTop_toBottomOf="@+id/select_time"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Select training time "
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
-        app:layout_constraintVertical_bias="0.2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/modeSpinner" />
+        android:layout_width="80dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center_vertical"
+        android:text=" 5 min"
+        android:textAppearance="@style/select_game"
+        app:layout_constraintStart_toEndOf="@+id/radioGroup"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="80dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:text=" 10 min"
+        android:textAppearance="@style/select_game"
+        app:layout_constraintStart_toEndOf="@+id/radioGroup"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        tools:ignore="MissingConstraints" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0"
-        app:layout_constraintHorizontal_bias="0">
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@+id/select_time"
+        app:layout_constraintTop_toBottomOf="@+id/select_time">
+
 
         <RadioButton
             android:id="@+id/radioButton3min"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="66dp"
+            android:layout_height="19dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/radio_button_selector"
+            android:button="@color/transparent"
             android:checked="true"
             android:text="3 min"
-            android:textColor="@color/black"
-            android:textSize="20dp"
+            android:textSize="0dp"
             tools:layout_editor_absoluteX="74dp"
             tools:layout_editor_absoluteY="357dp" />
 
         <RadioButton
             android:id="@+id/radioButton5min"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="66dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
             android:text="5 min"
-            android:textColor="@color/black"
-            android:textSize="20dp"
+            android:textSize="0dp"
+            android:background="@drawable/radio_button_selector"
+            android:button="@color/transparent"
             tools:layout_editor_absoluteX="74dp"
             tools:layout_editor_absoluteY="357dp" />
 
         <RadioButton
             android:id="@+id/radioButton10min"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="10 min"
-            android:textColor="@color/black"
-            android:textSize="20dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:text="5 min"
+            android:textSize="0dp"
+            android:layout_width="66dp"
+            android:layout_height="18dp"
+            android:background="@drawable/radio_button_selector"
+            android:button="@color/transparent"
             tools:layout_editor_absoluteX="74dp"
-            tools:layout_editor_absoluteY="357dp" />
+            tools:layout_editor_absoluteY="357dp"
+
+        />
 
 
     </RadioGroup>
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Select training mode"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/select_game"
+        android:layout_width="360dp"
+        android:layout_height="37dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="32dp"
+        android:gravity="center_vertical"
+        android:text="Select game mode:"
+        android:textAppearance="@style/select_game"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.05"
-        app:layout_constraintHorizontal_bias="0.1"/>
+        app:layout_constraintTop_toBottomOf="@+id/setting_lay"
+        tools:ignore="MissingConstraints" />
 
     <Spinner
         android:id="@+id/modeSpinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="20dp"
+        android:layout_marginTop="16dp"
+        android:textAppearance="@style/select_game"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toStartOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintStart_toStartOf="@+id/select_game"
+        app:layout_constraintTop_toBottomOf="@+id/select_game" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/start"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="60dp"
+        android:background="#00000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintHorizontal_bias="0.9"
+        tools:ignore="MissingConstraints">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/startGameButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/small_button_background"
+            android:text="START"
+            android:textAppearance="@style/select_game"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="0dp">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <View
+            android:id="@+id/vector"
+            android:layout_width="15dp"
+            android:layout_height="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/vector"
+            android:elevation="4dp"
+            app:layout_constraintBottom_toBottomOf="@+id/start"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.05"
+            app:layout_constraintStart_toStartOf="@+id/start"
+            app:layout_constraintTop_toTopOf="@+id/startGameButton"
+            app:layout_constraintVertical_bias="0.6" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
