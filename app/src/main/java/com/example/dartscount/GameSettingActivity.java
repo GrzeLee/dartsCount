@@ -26,13 +26,14 @@ public class GameSettingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_setting);
+        getSupportActionBar().hide();
 
         modeSpinner = findViewById(R.id.modeSpinner);
         startGameButton = findViewById(R.id.startGameButton);
         radioGroup = findViewById(R.id.radioGroup);
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.gameModes, android.R.layout.simple_spinner_item);
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.gameModes, R.layout.spinner_item);
+            adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
             modeSpinner.setAdapter(adapter);
 
 
@@ -63,7 +64,9 @@ public class GameSettingActivity extends AppCompatActivity {
     }
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+        finish();
+        Intent intent = new Intent(GameSettingActivity.this,MainActivity.class);
+        startActivity(intent);
     }
 
     public long convertTimeToMilliseconds(){

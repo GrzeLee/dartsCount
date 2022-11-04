@@ -4,22 +4,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".PopupBuilder">
+    tools:context=".PopupBuilder"
+    android:background="@drawable/popup_backgorund">
 
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="35dp"
-        android:textColor="@color/black"
-        android:textStyle="bold"
+        android:layout_marginTop="16dp"
         android:text="@string/gameover"
-        app:layout_constraintVertical_bias="0"
+        android:textAppearance="@style/popup_title"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0" />
 
 
     <TextView
@@ -28,62 +28,45 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="@string/total_correct_answers"
-        android:textSize="17dp"
-        android:textStyle="bold"
-        android:textColor="#61FF33"
+        android:textAppearance="@style/summary_gam"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/total_incorrect_answers"
-        android:textColor="#FF5733"
-        android:textSize="17dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toStartOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <TextView
         android:id="@+id/correctAnswerView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
         android:text="0"
-        android:textColor="@color/black"
-        android:textSize="17dp"
-        android:textStyle="italic"
+        android:textAppearance="@style/summary_gam"
         app:layout_constraintBottom_toBottomOf="@+id/textView5"
         app:layout_constraintStart_toEndOf="@+id/textView5"
         app:layout_constraintTop_toTopOf="@+id/textView5" />
 
-    <TextView
-        android:id="@+id/incorrectAnswerView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="0"
-        android:textColor="@color/black"
-        android:textSize="17dp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="@+id/textView6"
-        app:layout_constraintStart_toEndOf="@+id/textView6"
-        app:layout_constraintTop_toTopOf="@+id/textView6" />
 
     <ImageButton
         android:id="@+id/endButton"
-        android:layout_width="43dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="24dp"
-        android:background="#00FFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/close_popup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6"
-        app:srcCompat="@android:drawable/ic_delete" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/close_popup"
+        android:textAppearance="@style/app_title"
+        android:textStyle="italic"
+        android:textSize="40dp"
+        app:layout_constraintBottom_toBottomOf="@+id/endButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/endButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>

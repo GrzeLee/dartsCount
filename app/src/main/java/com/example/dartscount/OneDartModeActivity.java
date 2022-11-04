@@ -25,7 +25,6 @@ public class OneDartModeActivity extends AppCompatActivity {
 
     private CountDownTimer countDownTimer;
     private int backTapCount = 0;
-    private int missCount = 0;
     private int correctCount = 0;
 
     private ExpectedResultAndDisplayedNumber expectedResultAndDisplayedNumber;
@@ -35,6 +34,7 @@ public class OneDartModeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.onedart_mode_game_layout);
+        getSupportActionBar().hide();
 
         nextButton = findViewById(R.id.validateAndNextQuestionButton);
         numberToCount = findViewById(R.id.numberToDisplayForUser);
@@ -57,7 +57,7 @@ public class OneDartModeActivity extends AppCompatActivity {
             }
             public void onFinish() {
                 PopupBuilder popupBuilder = new PopupBuilder(OneDartModeActivity.this);
-                popupBuilder.summaryGamePopup(String.valueOf(correctCount), String.valueOf(missCount));
+                popupBuilder.summaryGamePopup(String.valueOf(correctCount));
             }
         }.start();
 
@@ -75,7 +75,6 @@ public class OneDartModeActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Nice !!!",
                             Toast.LENGTH_LONG).show();
                 } else {
-                    missCount ++;
                     Toast.makeText(getApplicationContext(), "Bad Value !!!",
                             Toast.LENGTH_LONG).show();
                 }
