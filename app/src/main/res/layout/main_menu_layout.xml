@@ -41,7 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/main_menu_buttons"
-            android:text="game mode 1"
+            android:text="@string/game_mode_1_title"
             android:textAppearance="@style/menu_button_text"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="0dp">
@@ -83,7 +83,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/main_menu_buttons"
-            android:text="game mode 2"
+            android:text="@string/game_mode_2_title"
             android:textAppearance="@style/menu_button_text"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="24dp">
@@ -125,7 +125,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/main_menu_buttons"
-            android:text="Best Score"
+            android:text="@string/best_score"
             android:textAppearance="@style/menu_button_text"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="24dp">

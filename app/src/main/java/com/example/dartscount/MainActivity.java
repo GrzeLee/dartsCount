@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
     public Button firstGameButton;
     public Button secondGameButton;
+    public Button bestScoreButton;
     private int backTapCount = 0;
 
     @Override
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
         firstGameButton = findViewById(R.id.firstGameButton);
         secondGameButton = findViewById(R.id.secondGameButton);
+        bestScoreButton = findViewById(R.id.best_score_button);
 
 
         firstGameButton.setOnClickListener(view -> {
@@ -30,6 +32,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             });
+
+        bestScoreButton.setOnClickListener(view -> {
+            Intent intent =  new Intent(MainActivity.this,BestScoreActivity.class);
+            startActivity(intent);
+            finish();
+        });
     }
 
 
