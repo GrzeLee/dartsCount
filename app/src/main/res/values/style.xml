@@ -102,7 +102,7 @@
     <style name="select_game">
 
         <item name="android:fontFamily">
-            @font/inria_sans_regular
+            @font/inria_sans_bold
         </item>
 
         <item name="android:textSize">
@@ -159,6 +159,69 @@
 
         <item name="android:textColor">
             #FFFFFF
+        </item>
+
+    </style>
+
+    <style name="summary_gam">
+        <item name="android:fontFamily">
+            @font/inria_sans_italic
+        </item>
+
+        <item name="android:textSize">
+            38sp
+        </item>
+
+        <item name="android:textColor">
+            #FFFFFF
+        </item>
+
+        <item name="android:shadowColor">
+            #40000000
+        </item>
+
+        <item name="android:shadowDx">
+            0
+        </item>
+
+        <item name="android:shadowDy">
+            4
+        </item>
+
+        <item name="android:shadowRadius">
+            4
+        </item>
+
+    </style>
+
+    <style name="popup_title">
+
+        <item name="android:fontFamily">
+            @font/inria_sans_bold
+        </item>
+
+        <item name="android:textSize">
+            43sp
+        </item>
+
+        <item name="android:textColor">
+            #FFFFFF
+        </item>
+
+        <item name="android:shadowColor">
+            #40000000
+        </item>
+
+        <item name="android:shadowDx">
+            0
+        </item>
+
+        <item name="android:shadowDy">
+            4
+        </item>
+
+        <item name="android:shadowRadius">
+            4
         </item>
 
     </style>

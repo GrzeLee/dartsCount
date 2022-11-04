@@ -64,7 +64,9 @@ public class GameSettingActivity extends AppCompatActivity {
     }
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+        finish();
+        Intent intent = new Intent(GameSettingActivity.this,MainActivity.class);
+        startActivity(intent);
     }
 
     public long convertTimeToMilliseconds(){
