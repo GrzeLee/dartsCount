@@ -11,6 +11,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.dartscount.roomdatabase.BestScore;
+import com.example.dartscount.roomdatabase.ScoreDataBase;
+
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
@@ -56,6 +59,10 @@ public class OneDartModeActivity extends AppCompatActivity {
                 gameTimer.setText(String.format("%s:%s", f.format(min), f.format(sec)));
             }
             public void onFinish() {
+                //SET BEST SCORE  TO DATABASES
+                setBaseScoreToDB(String.valueOf(correctCount), String.valueOf(receivedTimeValue));
+
+                //POPUP BUILDER
                 PopupBuilder popupBuilder = new PopupBuilder(OneDartModeActivity.this);
                 popupBuilder.summaryGamePopup(String.valueOf(correctCount));
             }
@@ -81,6 +88,28 @@ public class OneDartModeActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void setBaseScoreToDB(String score ,String receivedTimeValue) {
+        if(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().selectAll().isEmpty()){
+            BestScore newDataRow = new BestScore("0","0","0","0","0","0","0","0","0");
+            ScoreDataBase.getDataBase(getApplicationContext()).daoScore().insertAll(newDataRow);
+        }
+        int scoreInt = Integer.parseInt(score);
+            switch (receivedTimeValue) {
+                case "180000":
+                    int actualScore3min = Integer.parseInt(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode1Easy3min());
+                    if(scoreInt > actualScore3min){ScoreDataBase.getDataBase(getApplicationContext()).daoScore().updateEasyScore3min(score);}
+                    break;
+                case "300000":
+                    int actualScore5min = Integer.parseInt(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode1Easy5min());
+                    if(scoreInt > actualScore5min){ScoreDataBase.getDataBase(getApplicationContext()).daoScore().updateEasyScore5min(score);}
+                    break;
+                case "600000":
+                    int actualScore10min = Integer.parseInt(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode1Easy10min());
+                    if(scoreInt > actualScore10min){ScoreDataBase.getDataBase(getApplicationContext()).daoScore().updateEasyScore10min(score);}
+                    break;
+            }
     }
 
     @Override
