@@ -2,7 +2,6 @@ package com.example.dartscount;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Application;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -13,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
     public Button firstGameButton;
     public Button secondGameButton;
+    public Button bestScoreButton;
     private int backTapCount = 0;
 
     @Override
@@ -23,13 +23,25 @@ public class MainActivity extends AppCompatActivity {
 
         firstGameButton = findViewById(R.id.firstGameButton);
         secondGameButton = findViewById(R.id.secondGameButton);
+        bestScoreButton = findViewById(R.id.best_score_button);
 
 
         firstGameButton.setOnClickListener(view -> {
-                Intent intent =  new Intent(MainActivity.this,GameSettingActivity.class);
-                startActivity(intent);
-                finish();
-            });
+            Intent intent = new Intent(MainActivity.this, GameSettingActivity.class);
+            startActivity(intent);
+            finish();
+        });
+
+        secondGameButton.setOnClickListener(view -> {
+            Toast.makeText(getApplicationContext(), "Coming soon",
+                    Toast.LENGTH_LONG).show();
+        });
+
+        bestScoreButton.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, BestScoreActivity.class);
+            startActivity(intent);
+            finish();
+        });
     }
 
 
@@ -38,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         backTapCount++;
         Toast.makeText(getApplicationContext(), "Click again to close",
                 Toast.LENGTH_LONG).show();
-        if (backTapCount==2){
+        if (backTapCount == 2) {
             MainActivity.this.finish();
             System.exit(0);
         }

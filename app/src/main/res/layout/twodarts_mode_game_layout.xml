@@ -216,5 +216,17 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/gametimer"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="0.10"
+        app:layout_constraintBottom_toTopOf="@+id/question1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

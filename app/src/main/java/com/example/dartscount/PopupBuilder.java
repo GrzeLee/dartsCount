@@ -24,16 +24,22 @@ public class PopupBuilder extends AppCompatActivity {
         builderActivity = activity;
     }
 
-    public void summaryGamePopup(String correctCount){
+    public void summaryGamePopup(String correctCount, Boolean newRecord){
         dialogBuilder = new AlertDialog.Builder(builderActivity);
         View endGamePopupView = builderActivity.getLayoutInflater().inflate(R.layout.summary_game_popup,null);
         TextView correctAnswerView = endGamePopupView.findViewById(R.id.correctAnswerView);
+        TextView newBestScore = endGamePopupView.findViewById(R.id.newBestScore);
         ImageButton endButton = endGamePopupView.findViewById(R.id.endButton);
         dialogBuilder.setView(endGamePopupView);
         dialog = dialogBuilder.create();
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.setCanceledOnTouchOutside(false);
         dialog.show();
+        if(newRecord==true){
+            newBestScore.setText("New best score !");
+        }else {
+            newBestScore.setText("");
+        }
         correctAnswerView.setText(correctCount);
         endButton.setOnClickListener(view -> {
             dialog.dismiss();

@@ -1,8 +1,13 @@
 package com.example.dartscount;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.IBinder;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -10,16 +15,19 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.dartscount.roomdatabase.BestScore;
+import com.example.dartscount.roomdatabase.ScoreDataBase;
+
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
 public class TwoDartModeActivity extends AppCompatActivity {
 
     public Button nextButton;
-    public TextView numberToCount1;
-    public TextView numberToCount2;
+    public TextView numberToCount1,numberToCount2 ,infoView;
     public EditText inputAnswer;
     public TextView gameTimer;
+
 
     private CountDownTimer countDownTimer;
     private int backTapCount = 0;
@@ -34,14 +42,20 @@ public class TwoDartModeActivity extends AppCompatActivity {
         setContentView(R.layout.twodarts_mode_game_layout);
         getSupportActionBar().hide();
 
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED,0);
+
         nextButton = findViewById(R.id.validateAndNextQuestionButton);
         numberToCount1 = findViewById(R.id.firstDartToDisplayForUser);
         numberToCount2 = findViewById(R.id.secondDartToDisplayForUser);
         inputAnswer = findViewById(R.id.inputNumberToValid);
         gameTimer = findViewById(R.id.gameTimer);
+        infoView = findViewById(R.id.info);
 
         generateNewExample1();
         generateNewExample2();
+        inputAnswer.setFocusableInTouchMode(true);
+        inputAnswer.requestFocus();
 
         Intent receivedIntend = getIntent();
         long receivedTimeValue = receivedIntend.getLongExtra("TIME_SENDER",0);
@@ -56,8 +70,13 @@ public class TwoDartModeActivity extends AppCompatActivity {
                 gameTimer.setText(String.format("%s:%s", f.format(min), f.format(sec)));
             }
             public void onFinish() {
+                Boolean newBestScore =checkNewBestScore(String.valueOf(correctCount), String.valueOf(receivedTimeValue));
+                //SET BEST SCORE  TO DATABASES
+                setBaseScoreToDB(String.valueOf(correctCount), String.valueOf(receivedTimeValue));
+                inputAnswer.clearFocus();
+                //POPUP BUILDER
                 PopupBuilder popupBuilder = new PopupBuilder(TwoDartModeActivity.this);
-                popupBuilder.summaryGamePopup(String.valueOf(correctCount));
+                popupBuilder.summaryGamePopup(String.valueOf(correctCount),newBestScore);
             }
         }.start();
 
@@ -75,11 +94,9 @@ public class TwoDartModeActivity extends AppCompatActivity {
                     generateNewExample2();
                     correctCount ++;
                     inputAnswer.setText("");
-                    Toast.makeText(getApplicationContext(), "Nice !!!",
-                            Toast.LENGTH_LONG).show();
+                    textAnimation(infoView,"NICE !!!", R.color.correct_answer);
                 }else {
-                    Toast.makeText(getApplicationContext(), "Bad Value !!!",
-                            Toast.LENGTH_LONG).show();
+                    textAnimation(infoView,"BAD !!!", R.color.wrong_answer);
                 }
             }
         });
@@ -97,6 +114,81 @@ public class TwoDartModeActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
+    }
+
+    public void textAnimation(TextView textView, String text, int color){
+        AlphaAnimation alphaAnim = new AlphaAnimation(1.0f,0.0f);
+        alphaAnim.setStartOffset(2000);
+        alphaAnim.setDuration(400);
+        alphaAnim.start();
+        alphaAnim.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                textView.setText(text);
+                textView.setTextColor(getResources().getColor(color,null));
+            }
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                textView.setText("");
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+            }
+        });
+        textView.startAnimation(alphaAnim);
+    }
+
+    private void setBaseScoreToDB(String score ,String receivedTimeValue) {
+        if(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().selectAll().isEmpty()){
+            BestScore newDataRow = new BestScore("0","0","0","0","0","0","0","0","0");
+            ScoreDataBase.getDataBase(getApplicationContext()).daoScore().insertAll(newDataRow);
+        }
+        int scoreInt = Integer.parseInt(score);
+        switch (receivedTimeValue) {
+            case "60000":
+                int actualScoreTime1 = Integer.parseInt(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode1MediumTime1());
+                if(scoreInt > actualScoreTime1){ScoreDataBase.getDataBase(getApplicationContext()).daoScore().updateMediumScoreTime1(score);}
+                break;
+            case "120000":
+                int actualScoreTime2 = Integer.parseInt(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode1MediumTime2());
+                if(scoreInt > actualScoreTime2){ScoreDataBase.getDataBase(getApplicationContext()).daoScore().updateMediumScoreTime2(score);}
+                break;
+            case "180000":
+                int actualScoreTime3 = Integer.parseInt(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode1MediumTime3());
+                if(scoreInt > actualScoreTime3){ScoreDataBase.getDataBase(getApplicationContext()).daoScore().updateMediumScoreTime3(score);}
+                break;
+        }
+    }
+
+    private boolean checkNewBestScore(String score ,String receivedTimeValue){
+        int scoreInt = Integer.parseInt(score);
+        try {
+            switch (receivedTimeValue) {
+                case "60000":
+                    int actualScoreTime1 = Integer.parseInt(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode1MediumTime1());
+                    if (scoreInt > actualScoreTime1) {
+                        return true;
+                    }
+                    break;
+                case "120000":
+                    int actualScoreTime2 = Integer.parseInt(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode1MediumTime2());
+                    if (scoreInt > actualScoreTime2) {
+                        return true;
+                    }
+                    break;
+                case "180000":
+                    int actualScoreTime3 = Integer.parseInt(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode1MediumTime3());
+                    if (scoreInt > actualScoreTime3) {
+                        return true;
+                    }
+                    break;
+            }
+
+        }catch (NumberFormatException ex){
+            return true;
+        }
+        return false;
     }
 
     public void generateNewExample1(){

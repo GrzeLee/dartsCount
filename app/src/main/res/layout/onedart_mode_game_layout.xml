@@ -7,6 +7,7 @@
         android:layout_height="match_parent"
         android:background="#333333">
 
+
     <View
         android:id="@+id/background_"
         android:layout_width="546dp"
@@ -15,11 +16,8 @@
         android:layout_alignParentTop="true"
         android:background="@drawable/background_image"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-1dp"
+        tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp" />
-
-
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/question1"
@@ -127,18 +125,33 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/gametimer"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="0.10"
+        app:layout_constraintBottom_toTopOf="@+id/question1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
+
         android:id="@+id/next"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="50dp"
         android:background="#00000000"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintVertical_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/answer"
+        app:layout_constraintTop_toBottomOf="@+id/answer"
         tools:ignore="MissingConstraints">
 
         <androidx.appcompat.widget.AppCompatButton
