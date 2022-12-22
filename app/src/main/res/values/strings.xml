@@ -19,6 +19,9 @@
     <string name="game_mode_1_title">game mode 1</string>
     <string name="game_mode_2_title">game mode 2</string>
     <string name="best_score">Best Score</string>
+    <string name="gameTime_1">1 min</string>
+    <string name="gameTime_2">3 min</string>
+    <string name="gameTime_3">5 min</string>
 
     <string-array name="gameModes">
         <item>One Dart Mode (EASY)</item>

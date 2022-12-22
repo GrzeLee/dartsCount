@@ -1,8 +1,12 @@
 package com.example.dartscount;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -20,9 +24,7 @@ public class ThreeDartModeActivity extends AppCompatActivity {
 
 
     public Button nextButton;
-    public TextView numberToCount1;
-    public TextView numberToCount2;
-    public TextView numberToCount3;
+    public TextView numberToCount1,numberToCount2,numberToCount3 ,infoView;
     public EditText inputAnswer;
     public TextView gameTimer;
 
@@ -41,17 +43,22 @@ public class ThreeDartModeActivity extends AppCompatActivity {
         setContentView(R.layout.threedarts_mode_game_layout);
         getSupportActionBar().hide();
 
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED,0);
+
         nextButton = findViewById(R.id.validateAndNextQuestionButton);
         numberToCount1 = findViewById(R.id.firstDartToDisplayForUser);
         numberToCount2 = findViewById(R.id.secondDartToDisplayForUser);
         numberToCount3 = findViewById(R.id.thirdDartToDisplayForUser);
         inputAnswer = findViewById(R.id.inputNumberToValid);
         gameTimer = findViewById(R.id.gameTimer);
+        infoView = findViewById(R.id.info);
 
         generateNewExample1();
         generateNewExample2();
         generateNewExample3();
-
+        inputAnswer.setFocusableInTouchMode(true);
+        inputAnswer.requestFocus();
 
         Intent receivedIntend = getIntent();
         long receivedTimeValue = receivedIntend.getLongExtra("TIME_SENDER",0);
@@ -66,12 +73,13 @@ public class ThreeDartModeActivity extends AppCompatActivity {
                 gameTimer.setText(String.format("%s:%s", f.format(min), f.format(sec)));
             }
             public void onFinish() {
+                Boolean newBestScore =checkNewBestScore(String.valueOf(correctCount), String.valueOf(receivedTimeValue));
                 //SET BEST SCORE  TO DATABASES
                 setBaseScoreToDB(String.valueOf(correctCount), String.valueOf(receivedTimeValue));
-
+                inputAnswer.clearFocus();
                 //POPUP BUILDER
                 PopupBuilder popupBuilder = new PopupBuilder(ThreeDartModeActivity.this);
-                popupBuilder.summaryGamePopup(String.valueOf(correctCount));
+                popupBuilder.summaryGamePopup(String.valueOf(correctCount),newBestScore);
             }
         }.start();
 
@@ -90,11 +98,9 @@ public class ThreeDartModeActivity extends AppCompatActivity {
                     generateNewExample3();
                     correctCount ++;
                     inputAnswer.setText("");
-                    Toast.makeText(getApplicationContext(), "Nice !!!",
-                            Toast.LENGTH_LONG).show();
+                    textAnimation(infoView,"NICE !!!", R.color.correct_answer);
                 }else {
-                    Toast.makeText(getApplicationContext(), "Bad Value !!!",
-                            Toast.LENGTH_LONG).show();
+                    textAnimation(infoView,"BAD !!!", R.color.wrong_answer);
                 }
             }
         });
@@ -114,6 +120,59 @@ public class ThreeDartModeActivity extends AppCompatActivity {
         }
     }
 
+    public void textAnimation(TextView textView, String text, int color){
+        AlphaAnimation alphaAnim = new AlphaAnimation(1.0f,0.0f);
+        alphaAnim.setStartOffset(2000);
+        alphaAnim.setDuration(400);
+        alphaAnim.start();
+        alphaAnim.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                textView.setText(text);
+                textView.setTextColor(getResources().getColor(color,null));
+            }
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                textView.setText("");
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+            }
+        });
+        textView.startAnimation(alphaAnim);
+    }
+
+    private boolean checkNewBestScore(String score ,String receivedTimeValue){
+        int scoreInt = Integer.parseInt(score);
+        try {
+            switch (receivedTimeValue) {
+                case "60000":
+                    int actualScoreTime1 = Integer.parseInt(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode1HardTime1());
+                    if (scoreInt > actualScoreTime1) {
+                        return true;
+                    }
+                    break;
+                case "120000":
+                    int actualScoreTime2 = Integer.parseInt(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode1HardTime2());
+                    if (scoreInt > actualScoreTime2) {
+                        return true;
+                    }
+                    break;
+                case "180000":
+                    int actualScoreTime3 = Integer.parseInt(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode1HardTime3());
+                    if (scoreInt > actualScoreTime3) {
+                        return true;
+                    }
+                    break;
+            }
+
+        }catch (NumberFormatException ex){
+            return true;
+        }
+        return false;
+    }
+
     private void setBaseScoreToDB(String score ,String receivedTimeValue) {
         if(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().selectAll().isEmpty()){
             BestScore newDataRow = new BestScore("0","0","0","0","0","0","0","0","0");
@@ -121,17 +180,17 @@ public class ThreeDartModeActivity extends AppCompatActivity {
         }
         int scoreInt = Integer.parseInt(score);
         switch (receivedTimeValue) {
+            case "60000":
+                int actualScoreTime1 = Integer.parseInt(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode1HardTime1());
+                if(scoreInt > actualScoreTime1){ScoreDataBase.getDataBase(getApplicationContext()).daoScore().updateHardScoreTime1(score);}
+                break;
+            case "120000":
+                int actualScoreTime2 = Integer.parseInt(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode1HardTime2());
+                if(scoreInt > actualScoreTime2){ScoreDataBase.getDataBase(getApplicationContext()).daoScore().updateHardScoreTime2(score);}
+                break;
             case "180000":
-                int actualScore3min = Integer.parseInt(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode1Hard3min());
-                if(scoreInt > actualScore3min){ScoreDataBase.getDataBase(getApplicationContext()).daoScore().updateHardScore3min(score);}
-                break;
-            case "300000":
-                int actualScore5min = Integer.parseInt(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode1Hard5min());
-                if(scoreInt > actualScore5min){ScoreDataBase.getDataBase(getApplicationContext()).daoScore().updateHardScore5min(score);}
-                break;
-            case "600000":
-                int actualScore10min = Integer.parseInt(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode1Hard10min());
-                if(scoreInt > actualScore10min){ScoreDataBase.getDataBase(getApplicationContext()).daoScore().updateHardScore10min(score);}
+                int actualScoreTime3 = Integer.parseInt(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode1HardTime3());
+                if(scoreInt > actualScoreTime3){ScoreDataBase.getDataBase(getApplicationContext()).daoScore().updateHardScoreTime3(score);}
                 break;
         }
     }

@@ -10,4 +10,7 @@
     <color name="transparent">#ffffff</color>
     
     <color name="base_yellow">#FFDD2C</color>
+
+    <color name="correct_answer">#06D6A0</color>
+    <color name="wrong_answer">	#CD5C5C</color>
 </resources>

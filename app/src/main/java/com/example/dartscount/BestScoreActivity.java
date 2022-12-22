@@ -9,7 +9,7 @@ import com.example.dartscount.roomdatabase.ScoreDataBase;
 public class BestScoreActivity extends AppCompatActivity {
 
 
-    public TextView easy_top_score_3min, medium_top_score_3min, hard_top_score_3min, easy_top_score_5min, medium_top_score_5min, hard_top_score_5min, easy_top_score_10min, medium_top_score_10min, hard_top_score_10min;
+    public TextView easy_top_score_Time1, medium_top_score_Time1, hard_top_score_Time1, easy_top_score_Time2, medium_top_score_Time2, hard_top_score_Time2, easy_top_score_Time3, medium_top_score_Time3, hard_top_score_Time3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,25 +17,25 @@ public class BestScoreActivity extends AppCompatActivity {
         setContentView(R.layout.best_score);
         getSupportActionBar().hide();
 
-        easy_top_score_3min = findViewById(R.id.easy_top_score_3min);
-        medium_top_score_3min = findViewById(R.id.medium_top_score_3min);
-        hard_top_score_3min = findViewById(R.id.hard_top_score_3min);
-        easy_top_score_5min = findViewById(R.id.easy_top_score_5min);
-        medium_top_score_5min = findViewById(R.id.medium_top_score_5min);
-        hard_top_score_5min = findViewById(R.id.hard_top_score_5min);
-        easy_top_score_10min = findViewById(R.id.easy_top_score_10min);
-        medium_top_score_10min = findViewById(R.id.medium_top_score_10min);
-        hard_top_score_10min = findViewById(R.id.hard_top_score_10min);
+        easy_top_score_Time1 = findViewById(R.id.easy_top_score_Time1);
+        medium_top_score_Time1 = findViewById(R.id.medium_top_score_Time1);
+        hard_top_score_Time1 = findViewById(R.id.hard_top_score_Time1);
+        easy_top_score_Time2 = findViewById(R.id.easy_top_score_Time2);
+        medium_top_score_Time2 = findViewById(R.id.medium_top_score_Time2);
+        hard_top_score_Time2 = findViewById(R.id.hard_top_score_Time2);
+        easy_top_score_Time3 = findViewById(R.id.easy_top_score_Time3);
+        medium_top_score_Time3 = findViewById(R.id.medium_top_score_Time3);
+        hard_top_score_Time3 = findViewById(R.id.hard_top_score_Time3);
 
-        easy_top_score_3min.setText(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode1Easy3min());
-        easy_top_score_5min.setText(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode1Easy5min());
-        easy_top_score_10min.setText(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode1Easy10min());
-        medium_top_score_3min.setText(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode1Medium3min());
-        medium_top_score_5min.setText(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode1Medium5min());
-        medium_top_score_10min.setText(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode1Medium10min());
-        hard_top_score_3min.setText(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode1Hard3min());
-        hard_top_score_5min.setText(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode1Hard5min());
-        hard_top_score_10min.setText(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode1Hard10min());
+        easy_top_score_Time1.setText(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode1EasyTime1());
+        easy_top_score_Time2.setText(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode1EasyTime2());
+        easy_top_score_Time3.setText(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode1EasyTime3());
+        medium_top_score_Time1.setText(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode1MediumTime1());
+        medium_top_score_Time2.setText(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode1MediumTime2());
+        medium_top_score_Time3.setText(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode1MediumTime3());
+        hard_top_score_Time1.setText(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode1HardTime1());
+        hard_top_score_Time2.setText(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode1HardTime2());
+        hard_top_score_Time3.setText(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode1HardTime3());
     }
 
     @Override
