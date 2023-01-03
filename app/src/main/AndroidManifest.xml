@@ -14,19 +14,36 @@
         android:theme="@style/Theme.DartsCount"
         tools:targetApi="31" >
         <activity
-            android:name=".OneDartModeActivity"
+            android:name=".secondGameModeActivities.OneThrowSecondModeActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".TwoDartModeActivity"
+            android:name=".secondGameModeActivities.TwoThrowsSecondModeActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ThreeDartModeActivity"
+            android:name=".secondGameModeActivities.ThreeThrowsSecondModeActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".GameSettingActivity"
+            android:name=".firstGameModeActivities.OneDartModeActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".firstGameModeActivities.TwoDartModeActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".firstGameModeActivities.ThreeDartModeActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FirstGameModeSettingActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity
+            android:name=".SecondGameModeSettingActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden"/>

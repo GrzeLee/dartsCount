@@ -158,11 +158,11 @@
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="4dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:background="@color/base_yellow"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/setting_lay" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <View
         android:id="@+id/view2"
@@ -301,6 +301,277 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/view4"
         app:layout_constraintTop_toBottomOf="@+id/medium_top_score_Time3" />
+
+    <TextView
+        android:id="@+id/textView2.6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/game_mode_2_title"
+        android:textAppearance="@style/gametimer"
+        android:textSize="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view3"
+        tools:ignore="MissingConstraints" />
+
+    <View
+        android:id="@+id/clock2.1_icon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/clock_icon"
+        app:layout_constraintBottom_toTopOf="@+id/view2.0"
+        app:layout_constraintEnd_toEndOf="@+id/view2.2"
+        app:layout_constraintStart_toStartOf="@+id/view2.2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2.6"
+        tools:ignore="MissingConstraints" />
+
+
+    <TextView
+        android:id="@+id/textView2.10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:textAppearance="@style/setting_lay"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/clock2.1_icon"
+        app:layout_constraintEnd_toStartOf="@+id/view2.3"
+        app:layout_constraintStart_toEndOf="@+id/view2.2"
+        app:layout_constraintTop_toTopOf="@+id/clock2.1_icon" />
+
+    <TextView
+        android:id="@+id/textView2.11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3"
+        android:textAppearance="@style/setting_lay"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/clock2.2_icon"
+        app:layout_constraintEnd_toStartOf="@+id/view2.4"
+        app:layout_constraintStart_toEndOf="@+id/view2.3"
+        app:layout_constraintTop_toTopOf="@+id/clock2.2_icon" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5"
+        android:textAppearance="@style/setting_lay"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/clock2.3_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/view2.4"
+        app:layout_constraintTop_toTopOf="@+id/clock2.3_icon" />
+
+    <View
+        android:id="@+id/clock2.2_icon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/clock_icon"
+        app:layout_constraintBottom_toTopOf="@+id/view2.0"
+        app:layout_constraintEnd_toEndOf="@+id/view2.3"
+        app:layout_constraintStart_toStartOf="@+id/view2.3"
+        app:layout_constraintTop_toBottomOf="@+id/textView2.6"
+        tools:ignore="MissingConstraints" />
+
+    <View
+        android:id="@+id/clock2.3_icon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/clock_icon"
+        app:layout_constraintBottom_toTopOf="@+id/view2.0"
+        app:layout_constraintStart_toStartOf="@+id/view2.4"
+        app:layout_constraintTop_toBottomOf="@+id/textView2.6"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView2.7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EASY"
+        android:textSize="30dp"
+        android:layout_margin="10dp"
+        android:textAppearance="@style/gametimer"
+        app:layout_constraintEnd_toStartOf="@+id/view2.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2.0" />
+
+    <TextView
+        android:id="@+id/textView2.9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MEDIUM"
+        android:textSize="30dp"
+        android:layout_margin="10dp"
+        android:textAppearance="@style/gametimer"
+        app:layout_constraintEnd_toStartOf="@+id/view2.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2.7" />
+
+    <TextView
+        android:id="@+id/textView2.8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HARD"
+        android:textSize="30dp"
+        android:layout_margin="10dp"
+        android:textAppearance="@style/gametimer"
+        app:layout_constraintEnd_toStartOf="@+id/view2.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2.9" />
+
+    <View
+        android:id="@+id/view2.0"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/base_yellow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2.6" />
+
+    <View
+        android:id="@+id/view2.2"
+        android:layout_width="4dp"
+        android:layout_height="150dp"
+        android:background="@color/base_yellow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2.0" />
+
+    <View
+        android:id="@+id/view2.3"
+        android:layout_width="4dp"
+        android:layout_height="150dp"
+        android:background="@color/base_yellow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2.0" />
+
+    <View
+        android:id="@+id/view2.4"
+        android:layout_width="4dp"
+        android:layout_height="150dp"
+        android:background="@color/base_yellow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2.0" />
+
+    <TextView
+        android:id="@+id/easy_mode2_top_score_Time1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="00"
+        android:textAppearance="@style/gametimer"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toStartOf="@+id/view2.3"
+        app:layout_constraintStart_toEndOf="@+id/view2.2"
+        app:layout_constraintTop_toBottomOf="@+id/view2.0" />
+
+    <TextView
+        android:id="@+id/medium_mode2_top_score_Time1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="00"
+        android:textAppearance="@style/gametimer"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toStartOf="@+id/view2.3"
+        app:layout_constraintStart_toEndOf="@+id/view2.2"
+        app:layout_constraintTop_toBottomOf="@+id/easy_mode2_top_score_Time1" />
+
+    <TextView
+        android:id="@+id/hard_mode2_top_score_Time1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="00"
+        android:textAppearance="@style/gametimer"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toStartOf="@+id/view2.3"
+        app:layout_constraintStart_toEndOf="@+id/view2.2"
+        app:layout_constraintTop_toBottomOf="@+id/medium_mode2_top_score_Time1" />
+
+    <TextView
+        android:id="@+id/easy_mode2_top_score_Time2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="00"
+        android:textAppearance="@style/gametimer"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toStartOf="@+id/view2.4"
+        app:layout_constraintStart_toEndOf="@+id/view2.3"
+        app:layout_constraintTop_toBottomOf="@+id/view2.0" />
+
+    <TextView
+        android:id="@+id/medium_mode2_top_score_Time2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="00"
+        android:textAppearance="@style/gametimer"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toStartOf="@+id/view2.4"
+        app:layout_constraintStart_toEndOf="@+id/view2.3"
+        app:layout_constraintTop_toBottomOf="@+id/easy_mode2_top_score_Time2" />
+
+    <TextView
+        android:id="@+id/hard_mode2_top_score_Time2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="00"
+        android:textAppearance="@style/gametimer"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toStartOf="@+id/view2.4"
+        app:layout_constraintStart_toEndOf="@+id/view2.3"
+        app:layout_constraintTop_toBottomOf="@+id/medium_mode2_top_score_Time2" />
+
+    <TextView
+        android:id="@+id/easy_mode2_top_score_Time3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="00"
+        android:textAppearance="@style/gametimer"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/view2.4"
+        app:layout_constraintTop_toBottomOf="@+id/view2.0" />
+
+    <TextView
+        android:id="@+id/medium_mode2_top_score_Time3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="00"
+        android:textAppearance="@style/gametimer"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/view2.4"
+        app:layout_constraintTop_toBottomOf="@+id/easy_mode2_top_score_Time3" />
+
+    <TextView
+        android:id="@+id/hard_mode2_top_score_Time3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="00"
+        android:textAppearance="@style/gametimer"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/view2.4"
+        app:layout_constraintTop_toBottomOf="@+id/medium_mode2_top_score_Time3" />
 
         <View
         android:id="@+id/background_"
