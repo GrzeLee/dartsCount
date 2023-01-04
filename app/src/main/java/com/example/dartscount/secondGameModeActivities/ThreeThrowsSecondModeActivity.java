@@ -45,14 +45,14 @@ public class ThreeThrowsSecondModeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.twodarts_mode_game_layout);
+        setContentView(R.layout.threethrows_second_mode_layout);
         getSupportActionBar().hide();
 
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.toggleSoftInput(InputMethodManager.SHOW_FORCED,0);
 
         nextButton = findViewById(R.id.validateAndNextQuestionButton);
-        numberToCount1 = findViewById(R.id.firstDartToDisplayForUser);
+        numberToCount1 = findViewById(R.id.numberToDisplayForUser);
         numberToCount2 = findViewById(R.id.secondDartToDisplayForUser);
         numberToCount3 = findViewById(R.id.thirdDartToDisplayForUser);
         inputAnswer = findViewById(R.id.inputNumberToValid);
@@ -217,13 +217,13 @@ public class ThreeThrowsSecondModeActivity extends AppCompatActivity {
     }
 
     public void setFinalScore(){
-        //TODO potrzebne sa wszystkie expected result
-        finalScore = CountMethods.getFinalScore(expectedResultAndDisplayedNumber1.getExpectedResult());
+        int expectedResultsSum = Integer.parseInt(expectedResultAndDisplayedNumber1.getExpectedResult()) + Integer.parseInt(expectedResultAndDisplayedNumber2.getExpectedResult()) + Integer.parseInt(expectedResultAndDisplayedNumber3.getExpectedResult());
+        finalScore = CountMethods.getFinalScore(String.valueOf(expectedResultsSum));
         score.setText(finalScore);
     }
 
     public String correctAnswer(){
-        int throwsSum = Integer.parseInt(expectedResultAndDisplayedNumber1.getExpectedResult()) + Integer.parseInt(expectedResultAndDisplayedNumber2.getExpectedResult());
+        int throwsSum = Integer.parseInt(expectedResultAndDisplayedNumber1.getExpectedResult()) + Integer.parseInt(expectedResultAndDisplayedNumber2.getExpectedResult()) + Integer.parseInt(expectedResultAndDisplayedNumber3.getExpectedResult());
         int answer = Integer.parseInt(finalScore) - throwsSum;
         return String.valueOf(answer);
     }

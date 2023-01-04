@@ -28,7 +28,7 @@ import java.text.NumberFormat;
 public class OneThrowSecondModeActivity extends AppCompatActivity {
 
 
-    public TextView gameTimer, numberToCount, infoView, score;
+    private TextView gameTimer, numberToCount, infoView, score;
     public Button nextButton;
     public EditText inputAnswer;
 
