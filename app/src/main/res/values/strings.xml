@@ -22,6 +22,7 @@
     <string name="gameTime_1">1 min</string>
     <string name="gameTime_2">3 min</string>
     <string name="gameTime_3">5 min</string>
+    <string name="scoreToCount">501</string>
 
     <string-array name="gameModes">
         <item>One Dart Mode (EASY)</item>

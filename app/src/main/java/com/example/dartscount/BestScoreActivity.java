@@ -10,6 +10,7 @@ public class BestScoreActivity extends AppCompatActivity {
 
 
     public TextView easy_top_score_Time1, medium_top_score_Time1, hard_top_score_Time1, easy_top_score_Time2, medium_top_score_Time2, hard_top_score_Time2, easy_top_score_Time3, medium_top_score_Time3, hard_top_score_Time3;
+    public TextView easy_mode2_top_score_Time1, medium_mode2_top_score_Time1, hard_mode2_top_score_Time1, easy_mode2_top_score_Time2, medium_mode2_top_score_Time2, hard_mode2_top_score_Time2, easy_mode2_top_score_Time3, medium_mode2_top_score_Time3, hard_mode2_top_score_Time3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,16 @@ public class BestScoreActivity extends AppCompatActivity {
         medium_top_score_Time3 = findViewById(R.id.medium_top_score_Time3);
         hard_top_score_Time3 = findViewById(R.id.hard_top_score_Time3);
 
+        easy_mode2_top_score_Time1 = findViewById(R.id.easy_mode2_top_score_Time1);
+        medium_mode2_top_score_Time1 = findViewById(R.id.medium_mode2_top_score_Time1);
+        hard_mode2_top_score_Time1 = findViewById(R.id.hard_mode2_top_score_Time1);
+        easy_mode2_top_score_Time2 = findViewById(R.id.easy_mode2_top_score_Time2);
+        medium_mode2_top_score_Time2 = findViewById(R.id.medium_mode2_top_score_Time2);
+        hard_mode2_top_score_Time2 = findViewById(R.id.hard_mode2_top_score_Time2);
+        easy_mode2_top_score_Time3 = findViewById(R.id.easy_mode2_top_score_Time3);
+        medium_mode2_top_score_Time3 = findViewById(R.id.medium_mode2_top_score_Time3);
+        hard_mode2_top_score_Time3 = findViewById(R.id.hard_mode2_top_score_Time3);
+
         easy_top_score_Time1.setText(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode1EasyTime1());
         easy_top_score_Time2.setText(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode1EasyTime2());
         easy_top_score_Time3.setText(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode1EasyTime3());
@@ -36,6 +47,16 @@ public class BestScoreActivity extends AppCompatActivity {
         hard_top_score_Time1.setText(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode1HardTime1());
         hard_top_score_Time2.setText(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode1HardTime2());
         hard_top_score_Time3.setText(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode1HardTime3());
+
+        easy_mode2_top_score_Time1.setText(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode2EasyTime1());
+        easy_mode2_top_score_Time2.setText(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode2EasyTime2());
+        easy_mode2_top_score_Time3.setText(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode2EasyTime3());
+        medium_mode2_top_score_Time1.setText(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode2MediumTime1());
+        medium_mode2_top_score_Time2.setText(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode2MediumTime2());
+        medium_mode2_top_score_Time3.setText(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode2MediumTime3());
+        hard_mode2_top_score_Time1.setText(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode2HardTime1());
+        hard_mode2_top_score_Time2.setText(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode2HardTime2());
+        hard_mode2_top_score_Time3.setText(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().getMode2HardTime3());
     }
 
     @Override

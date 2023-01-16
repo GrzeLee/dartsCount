@@ -8,14 +8,16 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 
-
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.filament.View;
+import com.example.dartscount.firstGameModeActivities.OneDartModeActivity;
+import com.example.dartscount.firstGameModeActivities.ThreeDartModeActivity;
+import com.example.dartscount.firstGameModeActivities.TwoDartModeActivity;
+import com.example.dartscount.secondGameModeActivities.OneThrowSecondModeActivity;
+import com.example.dartscount.secondGameModeActivities.ThreeThrowsSecondModeActivity;
+import com.example.dartscount.secondGameModeActivities.TwoThrowsSecondModeActivity;
 
-import org.w3c.dom.Text;
-
-public class GameSettingActivity extends AppCompatActivity {
+public class SecondGameModeSettingActivity extends AppCompatActivity {
 
     public Spinner modeSpinner;
     public Button startGameButton;
@@ -45,17 +47,17 @@ public class GameSettingActivity extends AppCompatActivity {
 
                 int selectedItemNumber = modeSpinner.getSelectedItemPosition();
                 if(selectedItemNumber==0){
-                    Intent intent = new Intent(GameSettingActivity.this,OneDartModeActivity.class);
+                    Intent intent = new Intent(SecondGameModeSettingActivity.this, OneThrowSecondModeActivity.class);
                     intent.putExtra("TIME_SENDER", convertTimeToMilliseconds());
                     startActivity(intent);
                 }
                 if(selectedItemNumber==1){
-                    Intent intent = new Intent(GameSettingActivity.this,TwoDartModeActivity.class);
+                    Intent intent = new Intent(SecondGameModeSettingActivity.this, TwoThrowsSecondModeActivity.class);
                     intent.putExtra("TIME_SENDER", convertTimeToMilliseconds());
                     startActivity(intent);
                 }
                 if(selectedItemNumber==2){
-                    Intent intent = new Intent(GameSettingActivity.this,ThreeDartModeActivity.class);
+                    Intent intent = new Intent(SecondGameModeSettingActivity.this, ThreeThrowsSecondModeActivity.class);
                     intent.putExtra("TIME_SENDER", convertTimeToMilliseconds());
                     startActivity(intent);
                 }
@@ -65,7 +67,7 @@ public class GameSettingActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         finish();
-        Intent intent = new Intent(GameSettingActivity.this,MainActivity.class);
+        Intent intent = new Intent(SecondGameModeSettingActivity.this,MainActivity.class);
         startActivity(intent);
     }
 

@@ -27,14 +27,15 @@ public class MainActivity extends AppCompatActivity {
 
 
         firstGameButton.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this, GameSettingActivity.class);
+            Intent intent = new Intent(MainActivity.this, FirstGameModeSettingActivity.class);
             startActivity(intent);
             finish();
         });
 
         secondGameButton.setOnClickListener(view -> {
-            Toast.makeText(getApplicationContext(), "Coming soon",
-                    Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(MainActivity.this, SecondGameModeSettingActivity.class);
+            startActivity(intent);
+            finish();
         });
 
         bestScoreButton.setOnClickListener(view -> {

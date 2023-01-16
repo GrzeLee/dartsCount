@@ -1,4 +1,4 @@
-package com.example.dartscount;
+package com.example.dartscount.firstGameModeActivities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,6 +14,11 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.dartscount.CountMethods;
+import com.example.dartscount.ExpectedResultAndDisplayedNumber;
+import com.example.dartscount.MainActivity;
+import com.example.dartscount.PopupBuilder;
+import com.example.dartscount.R;
 import com.example.dartscount.roomdatabase.BestScore;
 import com.example.dartscount.roomdatabase.ScoreDataBase;
 
@@ -114,7 +119,7 @@ public class ThreeDartModeActivity extends AppCompatActivity {
                 Toast.LENGTH_LONG).show();
         if (backTapCount==2){
             countDownTimer.cancel();
-            Intent intent =  new Intent(ThreeDartModeActivity.this,MainActivity.class);
+            Intent intent =  new Intent(ThreeDartModeActivity.this, MainActivity.class);
             startActivity(intent);
             finish();
         }
@@ -175,7 +180,7 @@ public class ThreeDartModeActivity extends AppCompatActivity {
 
     private void setBaseScoreToDB(String score ,String receivedTimeValue) {
         if(ScoreDataBase.getDataBase(getApplicationContext()).daoScore().selectAll().isEmpty()){
-            BestScore newDataRow = new BestScore("0","0","0","0","0","0","0","0","0");
+            BestScore newDataRow = new BestScore("0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0");
             ScoreDataBase.getDataBase(getApplicationContext()).daoScore().insertAll(newDataRow);
         }
         int scoreInt = Integer.parseInt(score);

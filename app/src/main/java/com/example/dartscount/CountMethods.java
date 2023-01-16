@@ -28,4 +28,13 @@ public class CountMethods {
         }
         return String.valueOf(correctAnswer);
     }
+
+
+    public static String getFinalScore(String totalOfThrows){
+        Random random = new Random();
+        int min = Integer.parseInt(totalOfThrows)+1;
+        int max = 501;
+        int randomScore= random.nextInt(max - min + 1) + min;
+        return String.valueOf(randomScore);
+    }
 }
