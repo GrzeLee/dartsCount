@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">DALEJ</string>
+    <string name="previous">POPRZEDNI</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="gameover">KONIEC GRY</string>
+    <string name="total_correct_answers">Twój wynik:</string>
+    <string name="app_title">Darts Count</string>
+    <string name="startButton_settings">START</string>
+    <string name="close_popup">ZAMKNIJ</string>
+    <string name="game_mode_1_title">Tryb treningu 1</string>
+    <string name="game_mode_2_title">Tryb treningu 2</string>
+    <string name="best_score">Najlepsze Wyniki</string>
+    <string name="gameTime_1">1 min</string>
+    <string name="gameTime_2">3 min</string>
+    <string name="gameTime_3">5 min</string>
+    <string name="scoreToCount">501</string>
+    <string name="info_mode_1">Zlicz wszystkie swoje rzuty, podaj wynik tak szybko jak to możliwe.</string>
+    <string name="info_mode_2">Zlicz wszystkie swoje rzuty i odejmij od swojego licznika tak szybko jak to możliwe.</string>
+    <string name="select_game_mode">Wybierz poziom trudności:</string>
+    <string name="select_game_time">Wybierz czas gry:</string>
+    <string name="game_setting_layout_title">Ustawienia Treningu</string>
+    <string name="easy">ŁATWY</string>
+    <string name="medium">ŚREDNI</string>
+    <string name="hard">TRUDNY</string>
+
+    <string-array name="gameModes">
+        <item>Jeden rzut (ŁATWY)</item>
+        <item>Dwa rzuty (ŚREDNI)</item>
+        <item>Trzy rzuty (TRUDNY)</item>
+    </string-array>
+
+</resources>

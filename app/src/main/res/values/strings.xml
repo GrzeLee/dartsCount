@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">DartsCount</string>
-    <string name="numberToCount">D20</string>
-    <string name="title_activity_main23">MainActivity23</string>
+    <string name="app_name" translatable="false">DartsCount</string>
+    <string name="numberToCount" translatable="false">D20</string>
+    <string name="title_activity_main23" translatable="false">MainActivity23</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
@@ -12,21 +12,28 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="gameover">GameOver</string>
     <string name="total_correct_answers">Your score:</string>
-    <string name="total_incorrect_answers">Total incorrect answers</string>
     <string name="app_title">Darts Count</string>
     <string name="startButton_settings">START</string>
     <string name="close_popup">CLOSE</string>
-    <string name="game_mode_1_title">game mode 1</string>
-    <string name="game_mode_2_title">game mode 2</string>
+    <string name="game_mode_1_title">Training mode 1</string>
+    <string name="game_mode_2_title">Training mode 2</string>
     <string name="best_score">Best Score</string>
     <string name="gameTime_1">1 min</string>
     <string name="gameTime_2">3 min</string>
     <string name="gameTime_3">5 min</string>
     <string name="scoreToCount">501</string>
+    <string name="info_mode_1">Add up all the throws in the fastest possible speed.</string>
+    <string name="info_mode_2">Add up all the throws and subtract them from your counter.</string>
+    <string name="select_game_mode">Select the level of play:</string>
+    <string name="select_game_time">Select game time:</string>
+    <string name="game_setting_layout_title">Training Setting</string>
+    <string name="easy">EASY</string>
+    <string name="medium">MEDIUM</string>
+    <string name="hard">HARD</string>
 
     <string-array name="gameModes">
-        <item>One Dart Mode (EASY)</item>
-        <item>Two Darts Mode (MEDIUM)</item>
-        <item>Three Darts Mode (HARD)</item>
+        <item>One Throw (EASY)</item>
+        <item>Two Throws (MEDIUM)</item>
+        <item>Three Throws (HARD)</item>
     </string-array>
 </resources>

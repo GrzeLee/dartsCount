@@ -27,7 +27,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="32dp"
         android:background="@drawable/question_background"
-        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gameTimer"
@@ -66,7 +66,6 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/question2"
         android:layout_width="141dp"
@@ -75,7 +74,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="32dp"
         android:background="@drawable/question_background"
-        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gameTimer"
