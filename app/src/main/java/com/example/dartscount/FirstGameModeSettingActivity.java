@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +22,7 @@ public class FirstGameModeSettingActivity extends AppCompatActivity {
     public Button startGameButton;
     public RadioGroup radioGroup;
     public RadioButton radioButton;
+    public TextView textGameInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,9 @@ public class FirstGameModeSettingActivity extends AppCompatActivity {
         modeSpinner = findViewById(R.id.modeSpinner);
         startGameButton = findViewById(R.id.startGameButton);
         radioGroup = findViewById(R.id.radioGroup);
+        textGameInfo = findViewById(R.id.textGameInfo);
+
+        textGameInfo.setText(R.string.info_mode_1);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.gameModes, R.layout.spinner_item);
             adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
