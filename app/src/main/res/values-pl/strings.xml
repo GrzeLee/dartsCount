@@ -12,8 +12,8 @@
     <string name="app_title">Darts Count</string>
     <string name="startButton_settings">START</string>
     <string name="close_popup">ZAMKNIJ</string>
-    <string name="game_mode_1_title">Tryb treningu 1</string>
-    <string name="game_mode_2_title">Tryb treningu 2</string>
+    <string name="game_mode_1_title">TRENING LICZENIA 1</string>
+    <string name="game_mode_2_title">TRENING LICZENIA 2</string>
     <string name="best_score">Najlepsze Wyniki</string>
     <string name="gameTime_1">1 min</string>
     <string name="gameTime_2">3 min</string>
@@ -27,6 +27,7 @@
     <string name="easy">ŁATWY</string>
     <string name="medium">ŚREDNI</string>
     <string name="hard">TRUDNY</string>
+    <string name="game_mode_3_title">NAJLEPSZE KOŃCÓWKI</string>
 
     <string-array name="gameModes">
         <item>Jeden rzut (ŁATWY)</item>

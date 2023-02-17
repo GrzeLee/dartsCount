@@ -20,112 +20,130 @@
         tools:layout_editor_absoluteY="0dp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/question1"
-        android:layout_width="140dp"
+        android:id="@+id/answer1"
+        android:layout_width="100dp"
         android:layout_height="60dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/question_background"
-        app:layout_constraintHorizontal_bias="0.1"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/score_to_finish_background"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gameTimer"
+        app:layout_constraintTop_toBottomOf="@+id/textView14"
         tools:ignore="MissingConstraints">
 
-        <TextView
-            android:id="@+id/numberToDisplayForUser"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <Spinner
+            android:id="@+id/spinnerFirstThrowAnswer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginRight="5dp"
             android:gravity="center_horizontal"
             android:text="@string/numberToCount"
+            android:background="@null"
             android:textAppearance="@style/numbertodis"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/dart"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints" />
-
-        <View
-            android:id="@+id/dart"
-            android:layout_width="52dp"
-            android:layout_height="16dp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="5dp"
-            android:background="@drawable/dart_icon"
-            app:layout_constraintBottom_toBottomOf="@+id/question1"
-            app:layout_constraintStart_toStartOf="@+id/question1"
-            app:layout_constraintTop_toTopOf="@+id/numberToDisplayForUser"
-            app:layout_constraintVertical_bias="0.5" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/question2"
-        android:layout_width="141dp"
+        android:id="@+id/answer2"
+        android:layout_width="100dp"
         android:layout_height="60dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/question_background"
-        app:layout_constraintEnd_toEndOf="@+id/question1"
-        app:layout_constraintStart_toStartOf="@+id/question1"
-        app:layout_constraintTop_toBottomOf="@+id/question1"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/score_to_finish_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/background_"
+        app:layout_constraintTop_toBottomOf="@+id/textView12"
         tools:ignore="MissingConstraints">
 
-        <TextView
-            android:id="@+id/secondDartToDisplayForUser"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <Spinner
+            android:id="@+id/spinnerSecondThrowAnswer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginRight="5dp"
+            android:background="@null"
             android:gravity="center_horizontal"
             android:text="@string/numberToCount"
             android:textAppearance="@style/numbertodis"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/dart2"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints" />
 
-        <View
-            android:id="@+id/dart2"
-            android:layout_width="52dp"
-            android:layout_height="16dp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="5dp"
-            android:background="@drawable/dart_icon"
-            app:layout_constraintBottom_toBottomOf="@+id/question2"
-            app:layout_constraintStart_toStartOf="@+id/question2"
-            app:layout_constraintTop_toTopOf="@+id/secondDartToDisplayForUser"
-            app:layout_constraintVertical_bias="0.5" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/answer3"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/score_to_finish_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView15"
+        tools:ignore="MissingConstraints">
+
+        <Spinner
+            android:id="@+id/spinnerThirdThrowAnswer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:background="@null"
+            android:gravity="center_horizontal"
+            android:text="@string/numberToCount"
+            android:textAppearance="@style/numbertodis"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/scoreLayout"
-        android:layout_width="140dp"
+        android:layout_width="330dp"
         android:layout_height="60dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="32dp"
-        android:background="@drawable/question_background"
-        app:layout_constraintHorizontal_bias="0.9"
+        android:background="@drawable/score_to_finish_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gameTimer"
         tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SCORE TO FINISH"
+            android:textAppearance="@style/gametimer"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/score"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/score"
@@ -135,12 +153,12 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
+            android:layout_marginEnd="50dp"
             android:gravity="center_horizontal"
             android:text="@string/scoreToCount"
             android:textAppearance="@style/numbertodis"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints" />
 
@@ -148,41 +166,42 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/answer"
-        android:layout_width="140dp"
-        android:layout_height="60dp"
+        android:id="@+id/optimalAnswer"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="24dp"
         android:background="#00000000"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/question1"
+        app:layout_constraintTop_toBottomOf="@+id/answer1"
         tools:ignore="MissingConstraints">
 
         <View
             android:id="@+id/rectangle_a"
-            android:layout_width="140dp"
-            android:layout_height="60dp"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:background="@drawable/answer_background_mode_two"
             app:layout_constraintEnd_toEndOf="parent"
             tools:layout_editor_absoluteY="0dp" />
 
-        <EditText
-            android:id="@+id/inputNumberToValid"
-            android:layout_width="60dp"
-            android:layout_height="match_parent"
-            android:ems="3"
-            android:inputType="number"
-            android:maxEms="3"
-            android:textAppearance="@style/menu_button_text"
-            app:layout_constraintBottom_toBottomOf="parent"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SHOW OPTIMAL ANSWER"
+            android:textAlignment="center"
+            android:textAppearance="@style/gametimer"
+            android:textColor="@color/base_yellow"
+            android:textSize="15dp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="@+id/rectangle_a"
             app:layout_constraintEnd_toEndOf="@+id/rectangle_a"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/rectangle_a" />
+            app:layout_constraintStart_toStartOf="@+id/rectangle_a"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -204,46 +223,65 @@
         android:id="@+id/info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         android:textAppearance="@style/gametimer"
         android:textSize="30dp"
         android:textStyle="bold"
-        app:layout_constraintHorizontal_bias="0.10"
-        app:layout_constraintBottom_toTopOf="@+id/question1"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.10"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SCORE"
-        android:textAppearance="@style/gametimer"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/scoreLayout"
-        app:layout_constraintEnd_toEndOf="@+id/scoreLayout"
-        app:layout_constraintStart_toStartOf="@+id/scoreLayout" />
 
     <TextView
+        android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="THROW"
+        android:layout_marginTop="24dp"
+        android:text="THROWS"
         android:textAppearance="@style/gametimer"
         android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/question1"
-        app:layout_constraintEnd_toEndOf="@+id/question1"
-        app:layout_constraintStart_toStartOf="@+id/question1" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scoreLayout" />
 
     <TextView
+        android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="NEW SCORE"
+        android:layout_marginTop="8dp"
+        android:text="I"
         android:textAppearance="@style/gametimer"
-        android:textColor="@color/base_yellow"
         android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/answer"
-        app:layout_constraintEnd_toEndOf="@+id/answer"
-        app:layout_constraintStart_toStartOf="@+id/answer" />
+        app:layout_constraintEnd_toEndOf="@+id/answer1"
+        app:layout_constraintStart_toStartOf="@+id/answer1"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="III"
+        android:textAppearance="@style/gametimer"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/answer3"
+        app:layout_constraintStart_toStartOf="@+id/answer3"
+        app:layout_constraintTop_toBottomOf="@+id/textView13"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="II"
+        android:textAppearance="@style/gametimer"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/answer2"
+        app:layout_constraintStart_toStartOf="@+id/answer2"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
 
@@ -256,9 +294,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.9"
-        app:layout_constraintVertical_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/answer"
+        app:layout_constraintTop_toBottomOf="@+id/answer3"
+        app:layout_constraintVertical_bias="0.1"
         tools:ignore="MissingConstraints">
 
         <androidx.appcompat.widget.AppCompatButton
@@ -268,7 +306,7 @@
             android:background="@drawable/small_button_background"
             android:text="@string/next"
             android:textAppearance="@style/select_game"
-            tools:layout_editor_absoluteX="0dp">
+            app:layout_constraintStart_toStartOf="parent">
 
         </androidx.appcompat.widget.AppCompatButton>
 

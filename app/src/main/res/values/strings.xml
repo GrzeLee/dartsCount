@@ -30,10 +30,106 @@
     <string name="easy">EASY</string>
     <string name="medium">MEDIUM</string>
     <string name="hard">HARD</string>
+    <string name="game_mode_3_title">BEST LEG ENDING</string>
 
     <string-array name="gameModes">
         <item>One Throw (EASY)</item>
         <item>Two Throws (MEDIUM)</item>
         <item>Three Throws (HARD)</item>
     </string-array>
+
+    <string-array name="allThrows">
+        <item>-</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>25</item>
+        <item>D1</item>
+        <item>D2</item>
+        <item>D3</item>
+        <item>D4</item>
+        <item>D5</item>
+        <item>D6</item>
+        <item>D7</item>
+        <item>D8</item>
+        <item>D9</item>
+        <item>D10</item>
+        <item>D11</item>
+        <item>D12</item>
+        <item>D13</item>
+        <item>D14</item>
+        <item>D15</item>
+        <item>D16</item>
+        <item>D17</item>
+        <item>D18</item>
+        <item>D19</item>
+        <item>D20</item>
+        <item>D25</item>
+        <item>T1</item>
+        <item>T2</item>
+        <item>T3</item>
+        <item>T4</item>
+        <item>T5</item>
+        <item>T6</item>
+        <item>T7</item>
+        <item>T8</item>
+        <item>T9</item>
+        <item>T10</item>
+        <item>T11</item>
+        <item>T12</item>
+        <item>T13</item>
+        <item>T14</item>
+        <item>T15</item>
+        <item>T16</item>
+        <item>T17</item>
+        <item>T18</item>
+        <item>T19</item>
+        <item>T20</item>
+    </string-array>
+
+    <string-array name="doubleThrows">
+        <item>-</item>
+        <item>D1</item>
+        <item>D2</item>
+        <item>D3</item>
+        <item>D4</item>
+        <item>D5</item>
+        <item>D6</item>
+        <item>D7</item>
+        <item>D8</item>
+        <item>D9</item>
+        <item>D10</item>
+        <item>D11</item>
+        <item>D12</item>
+        <item>D13</item>
+        <item>D14</item>
+        <item>D15</item>
+        <item>D16</item>
+        <item>D17</item>
+        <item>D18</item>
+        <item>D19</item>
+        <item>D20</item>
+        <item>D25</item>
+    </string-array>
+
+
+
+
 </resources>

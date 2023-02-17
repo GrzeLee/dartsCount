@@ -7,12 +7,15 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.dartscount.bestLegEnding.BestEndingModeActivity;
+
 public class MainActivity extends AppCompatActivity {
 
 
     public Button firstGameButton;
     public Button secondGameButton;
     public Button bestScoreButton;
+    public Button thirdGameButton;
     private int backTapCount = 0;
 
     @Override
@@ -24,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         firstGameButton = findViewById(R.id.firstGameButton);
         secondGameButton = findViewById(R.id.secondGameButton);
         bestScoreButton = findViewById(R.id.best_score_button);
+        thirdGameButton = findViewById(R.id.thirdGameButton);
 
 
         firstGameButton.setOnClickListener(view -> {
@@ -40,6 +44,12 @@ public class MainActivity extends AppCompatActivity {
 
         bestScoreButton.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, BestScoreActivity.class);
+            startActivity(intent);
+            finish();
+        });
+
+        thirdGameButton.setOnClickListener(view -> {
+            Intent intent =  new Intent(MainActivity.this, BestEndingModeActivity.class);
             startActivity(intent);
             finish();
         });
